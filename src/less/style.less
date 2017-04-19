@@ -1,10 +1,47 @@
+@small:10px;
+@midi:14px;
+@large:18px;
+@xlarge:20px;
+@xxlarge:24px;
+.soft-box {
+    border-radius: 5px;
+}
 
 
 
-
-*{
+*,
+*:before,
+*:after{
     box-sizing: border-box;
 }
 body {
     font-family: 'Roboto', sans-serif;
+    font-size: @small;
+    background-color:  #dcdfe4;
+
+
+}
+.form-wrapper {
+    width: 840px;
+    height: 100%;
+    margin: 120px auto;
+    background-color: #ffffff;
+    padding: 28px 40px;
+    color: #333333;
+    .soft-box;
+    position: relative;
+}
+.form-wrapper::after {
+       position: absolute;
+       content: "";
+       width:100%;
+       background-color: #dddddd;
+       height: 1px;
+       top: 106px;
+       left: 0;
+}
+.title-form {
+    font-size: @xxlarge;
+    font-weight: 900;
+    line-height: 40px;
 }
