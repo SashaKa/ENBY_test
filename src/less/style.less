@@ -18,8 +18,6 @@ body {
     font-family: 'Roboto', sans-serif;
     font-size: @small;
     background-color:  #dcdfe4;
-
-
 }
 .form-wrapper {
     width: 840px;
@@ -31,15 +29,24 @@ body {
     .soft-box;
     position: relative;
 }
+.form-wrapper::before,
 .form-wrapper::after {
        position: absolute;
        content: "";
        width:100%;
        background-color: #dddddd;
        height: 1px;
-       top: 106px;
        left: 0;
 }
+.form-wrapper::before {
+    top: 106px;
+
+}
+.form-wrapper::after {
+    bottom: 106px;
+
+}
+
 .title-form {
     font-size: @xxlarge;
     font-weight: 900;

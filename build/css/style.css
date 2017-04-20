@@ -22,14 +22,20 @@ body {
   border-radius: 5px;
   position: relative;
 }
+.form-wrapper::before,
 .form-wrapper::after {
   position: absolute;
   content: "";
   width: 100%;
   background-color: #dddddd;
   height: 1px;
-  top: 106px;
   left: 0;
+}
+.form-wrapper::before {
+  top: 106px;
+}
+.form-wrapper::after {
+  bottom: 106px;
 }
 .title-form {
   font-size: 24px;

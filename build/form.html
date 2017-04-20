@@ -7,19 +7,62 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/normalize.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto&amp;subset=cyrillic" rel="stylesheet">
-    <title>Artboard</title>
+    <title>Новый заказ</title>
 </head>
 <body>
-    <section class="wrapper">
+    <form class="place an order">
         <h2 class="title-form">Новый заказ</h2>
-        <div class="form-wrap">
-            <input type="text">
-            <input type="text">
-            <input type="text">
-            <input type="text">
-            <input type="file">
+        <div class="add-task">
+            <input type="text" id="type-of-work"/>
+            <label for="type-of-work">тип работы</label>
+            <button type="button" name="button">Изменить</button>
+            <input type="text"id=something-type/>
+            <label for="something-type">тип работы</label>
+            <button type="button" name="button">изменить</button>
+            <input type="text"id="title-work"/> тест по дифференциальным уравнениям
+            <label for="title-work">заголовок</label>
+            <button type="button" name="button">изменить</button>
+            <textarea rows="7" cols="67" id="capture-task">В данном случае можно согласиться с А.А. Земляковским и румынским исследователем Альбертом Ковачем, считающими, что диалогический контекст абсурдно осознаёт палимпсест. Комбинаторное приращение выбирает мелодический символ. Генеративная поэтика недоступно нивелирует не-текст, об этом свидетельствуют краткость и завершенность формы, бессюжетность, своеобразие тематического развертывания.</textarea>
+            <label for="capture-task">сообщите нам всё, что необходимо знать для успешного выполнения работы</label>
+            <input type="file"id="files-input"/>
+            <label for="files-input">файлы (при наличии)</label>
+            <button type="submit" name="add-files">Добавить файлы</button>
         </div>
-        <div class="date-input-wrap"></div>
-    </section>
+        <div class="antiplagiarism">
+            <p class="title-forms-div">антиплагиат</p>
+            <input type="radio" id="antiplagiarism-on"/>
+            <label for="antiplagiarism-on">требуется</label>
+            <input type="radio"id="antiplagiarism-off"/>
+            <label for="antiplagiarism-off">не требуется</label>
+        </div>
+        <div class="doer-area">
+            <p class="title-forms-div">заказ увидят</p>
+            <input type="text" id="all-doers">
+            <label for="all-doers">все исполнители</label>
+            <input type="text" id="specific-doer">
+            <label for="specific-doer">конкретный исполнитель</label>
+        </div>
+        <div class="doer-profile">
+            <p class="title-forms-div">выбранный исполнитель</p>
+            <img src="" alt="" class="doer-avatar">
+            <div class="doers-id">
+                <span>исполнитель</span>
+                <a class="doers-name">Иннокентий</a>
+                <p class="id-number">ID1234567890</p>
+            </div>
+            <div class="rating-reviewrap">
+                <span class="raiting">рейтинг:  2890</span>
+                <span class="review">отзывы:</span>
+                <a href="" class="positive-review">+200</a>
+                <a href="" class="negative review">-1</a>
+                <p class="complited-task">выполнено заказов:  22890</p>
+            </div>
+        </div>
+        <div class="date-input-wrap">
+            <input type="date" name="date-implementation"value="30 сентября 2017">
+            <label for="date-implementation">срок выполнения</label>
+        </div>
+        <button type="submit">разместить заказ</button>
+    </form>
 </body>
 </html>
