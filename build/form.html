@@ -10,20 +10,32 @@
     <title>Новый заказ</title>
 </head>
 <body>
-    <form class="place an order">
+    <form class="add-task-form">
         <h2 class="title-form">Новый заказ</h2>
-        <div class="add-task">
-            <input type="text" id="type-of-work"/>
-            <label for="type-of-work">тип работы</label>
-            <button type="button" name="button">Изменить</button>
-            <input type="text"id=something-type/>
-            <label for="something-type">тип работы</label>
-            <button type="button" name="button">изменить</button>
-            <input type="text"id="title-work"/> тест по дифференциальным уравнениям
-            <label for="title-work">заголовок</label>
-            <button type="button" name="button">изменить</button>
+        <div class="date-input-wrap">
+            <input type="date" name="date-implementation"placeholder="срок выполнения"value="30 сентября 2017">
+            <label for="date-implementation"></label>
+        </div>
+        <div class="input-wrap">
+            <input type="text" id="type-of-work" placeholder="Тип работы"/>
+            <label for="type-of-work"></label>
+            <button type="button" name="input-btn">Изменить</button>
+        </div>
+        <div class="input-wrap">
+            <input type="text"id="something-type"placeholder="тип работы"/>
+            <label for="something-type"></label>
+            <button type="button" name="input-btn">изменить</button>
+        </div>
+        <div class="input-wrap">
+            <input type="text"id="title-work" placeholder="заголовок" />
+            <label for="title-work"></label>
+            <button type="button" name="input-btn">изменить</button>
+        </div>
+        <div class="input-wrap">
             <textarea rows="7" cols="67" id="capture-task">В данном случае можно согласиться с А.А. Земляковским и румынским исследователем Альбертом Ковачем, считающими, что диалогический контекст абсурдно осознаёт палимпсест. Комбинаторное приращение выбирает мелодический символ. Генеративная поэтика недоступно нивелирует не-текст, об этом свидетельствуют краткость и завершенность формы, бессюжетность, своеобразие тематического развертывания.</textarea>
             <label for="capture-task">сообщите нам всё, что необходимо знать для успешного выполнения работы</label>
+        </div>
+        <div class="input-wrap">
             <input type="file"id="files-input"/>
             <label for="files-input">файлы (при наличии)</label>
             <button type="submit" name="add-files">Добавить файлы</button>
@@ -37,17 +49,17 @@
         </div>
         <div class="doer-area">
             <p class="title-forms-div">заказ увидят</p>
-            <input type="text" id="all-doers">
+            <input type="radio" id="all-doers">
             <label for="all-doers">все исполнители</label>
-            <input type="text" id="specific-doer">
+            <input type="radio" id="specific-doer">
             <label for="specific-doer">конкретный исполнитель</label>
         </div>
         <div class="doer-profile">
             <p class="title-forms-div">выбранный исполнитель</p>
-            <img src="" alt="" class="doer-avatar">
+            <img src="" alt="" class="doer-avatar"width="60" height="60">
             <div class="doers-id">
                 <span>исполнитель</span>
-                <a class="doers-name">Иннокентий</a>
+                <a class="doers-name"href="#">Иннокентий</a>
                 <p class="id-number">ID1234567890</p>
             </div>
             <div class="rating-reviewrap">
@@ -57,10 +69,6 @@
                 <a href="" class="negative review">-1</a>
                 <p class="complited-task">выполнено заказов:  22890</p>
             </div>
-        </div>
-        <div class="date-input-wrap">
-            <input type="date" name="date-implementation"value="30 сентября 2017">
-            <label for="date-implementation">срок выполнения</label>
         </div>
         <button type="submit">разместить заказ</button>
     </form>
