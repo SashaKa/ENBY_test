@@ -6,13 +6,18 @@
 .soft-box {
     border-radius: 5px;
 }
-.placeholder-top{
+.placeholder-top {
     opacity: 0.6;
-  font-size: 10px;
-  line-height: 1;
-  color: #333333;
+    font-size: 10px;
+    line-height: 10px;
+    color: #333333;
 }
-
+.placeholder {
+    opacity: 0.6;
+    font-size: 16px;
+    line-height: 1.25;
+    color: #333333;
+}
 
 *,
 *:before,
@@ -38,12 +43,12 @@ body {
 }
 .add-task-form::before,
 .add-task-form::after {
-       position: absolute;
-       content: "";
-       width:100%;
-       background-color: #dddddd;
-       height: 1px;
-       left: 0;
+   position: absolute;
+   content: "";
+   width:100%;
+   background-color: #dddddd;
+   height: 1px;
+   left: 0;
 }
 .add-task-form::before {
     top: 106px;
@@ -65,24 +70,104 @@ body {
     align-self: flex-end;
 
 }
+.input-wrap {
+    border: 1px solid rgba(51, 51, 51, 0.13);
+    border-radius: 5px;
+    position: relative;
+    font-size: 18px;
+    line-height: 1.11;
+}
 input,
 textarea {
-    padding: @xlarge;
     width: 100%;
+    border: none;
+    padding:25px 20px 0px 20px;
 }
 input[type="date"] {
     width: 250px;
 }
-input::placeholder {
-    .placeholder-top
+input:focus,
+textarea:focus {
+    outline: none;
 }
-input::placeholder-shown {
-    .placeholder-top;
+input::-webkit-input-placeholder {
+    .placeholder;
+    opacity: 0.6;
+    padding-top: 5px;
+    transition: opacity 0.3s ease;
 }
-input:focus::placeholder-shown {
-    padding-bottom: 40px;
+input::-moz-placeholder {
+    .placeholder;
+    opacity: 0.6;
+    transition: opacity 0.3s ease;
+}
+input:-moz-placeholder {
+    .placeholder;
+    opacity: 0.6;
+    transition: opacity 0.3s ease;
+}
+input:-ms-input-placeholder {
+    .placeholder;
+    opacity: 0.6;
+    transition: opacity 0.3s ease;
+}
+input:focus::-webkit-input-placeholder {
+    opacity: 0;
+     transition: opacity 0.3s ease;
+ }
+input:focus::-moz-placeholder{
+    opacity: 0;
+     transition: opacity 0.3s ease;
+ }
+input:focus:-moz-placeholder{
+    opacity: 0;
+     transition: opacity 0.3s ease;
+ }
+input:focus:-ms-input-placeholder{
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
 
+textarea {
+    font-size: 10px;
+    line-height: 1;
+    position: relative;
 }
-button[name="input-btn"] {
+.top-placeholder {
+    position: absolute;
+    .placeholder-top;
+    opacity: 0;
+    top: 14px;
+    left: 20px;
+}
+.input-field:focus + label{
+    opacity: 0.6;
+}
+.capture-for-task {
+    position: absolute;
+    opacity: 0.8;
+    font-size: 14px;
+    line-height: 1.57;
+    color: #4e4e4e;
+    left: 105%;
+    top: 20%;
+}
+.visible {
+    visibility: visible;
+}
+.input-btn {
+    background-color: pink;
+}
+.hidden {
     visibility: hidden;
+}
+
+input[type="date"]:hover::-webkit-calendar-picker-indicator {
+
+  color: red;
+}
+input[type="date"]:hover:after {
+  content: "";
+  color: #555;
+  padding-right: 5px;
 }

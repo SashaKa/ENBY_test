@@ -4,7 +4,13 @@
 .placeholder-top {
   opacity: 0.6;
   font-size: 10px;
-  line-height: 1;
+  line-height: 10px;
+  color: #333333;
+}
+.placeholder {
+  opacity: 0.6;
+  font-size: 16px;
+  line-height: 1.25;
   color: #333333;
 }
 *,
@@ -69,89 +75,120 @@ body {
   -ms-flex-item-align: end;
   align-self: flex-end;
 }
+.input-wrap {
+  border: 1px solid rgba(51, 51, 51, 0.13);
+  border-radius: 5px;
+  position: relative;
+  font-size: 18px;
+  line-height: 1.11;
+}
 input,
 textarea {
-  padding: 20px;
   width: 100%;
+  border: none;
+  padding: 25px 20px 0px 20px;
 }
 input[type="date"] {
   width: 250px;
 }
-input::-webkit-input-placeholder {
-  opacity: 0.6;
-  font-size: 10px;
-  line-height: 1;
-  color: #333333;
+input:focus,
+textarea:focus {
+  outline: none;
 }
-input:-moz-placeholder {
-  opacity: 0.6;
-  font-size: 10px;
-  line-height: 1;
+input::-webkit-input-placeholder {
+  font-size: 16px;
+  line-height: 1.25;
   color: #333333;
+  opacity: 0.6;
+  padding-top: 5px;
+  -moz-transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease;
 }
 input::-moz-placeholder {
-  opacity: 0.6;
-  font-size: 10px;
-  line-height: 1;
+  font-size: 16px;
+  line-height: 1.25;
   color: #333333;
+  opacity: 0.6;
+  -moz-transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease;
+}
+input:-moz-placeholder {
+  font-size: 16px;
+  line-height: 1.25;
+  color: #333333;
+  opacity: 0.6;
+  -moz-transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease;
 }
 input:-ms-input-placeholder {
+  font-size: 16px;
+  line-height: 1.25;
+  color: #333333;
   opacity: 0.6;
+  -moz-transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease;
+}
+input:focus::-webkit-input-placeholder {
+  opacity: 0;
+  -moz-transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease;
+}
+input:focus::-moz-placeholder {
+  opacity: 0;
+  -moz-transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease;
+}
+input:focus:-moz-placeholder {
+  opacity: 0;
+  -moz-transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease;
+}
+input:focus:-ms-input-placeholder {
+  opacity: 0;
+  -moz-transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease;
+}
+textarea {
   font-size: 10px;
   line-height: 1;
-  color: #333333;
+  position: relative;
 }
-input::placeholder {
+.top-placeholder {
+  position: absolute;
   opacity: 0.6;
   font-size: 10px;
-  line-height: 1;
+  line-height: 10px;
   color: #333333;
+  opacity: 0;
+  top: 14px;
+  left: 20px;
 }
-input::-webkit-input-placeholder-shown {
+.input-field:focus + label {
   opacity: 0.6;
-  font-size: 10px;
-  line-height: 1;
-  color: #333333;
 }
-input:-moz-placeholder-shown {
-  opacity: 0.6;
-  font-size: 10px;
-  line-height: 1;
-  color: #333333;
+.capture-for-task {
+  position: absolute;
+  opacity: 0.8;
+  font-size: 14px;
+  line-height: 1.57;
+  color: #4e4e4e;
+  left: 105%;
+  top: 20%;
 }
-input::-moz-placeholder-shown {
-  opacity: 0.6;
-  font-size: 10px;
-  line-height: 1;
-  color: #333333;
+.visible {
+  visibility: visible;
 }
-input:-ms-input-placeholder-shown {
-  opacity: 0.6;
-  font-size: 10px;
-  line-height: 1;
-  color: #333333;
+.input-btn {
+  background-color: pink;
 }
-input::placeholder-shown {
-  opacity: 0.6;
-  font-size: 10px;
-  line-height: 1;
-  color: #333333;
-}
-input:focus::-webkit-input-placeholder-shown {
-  padding-bottom: 40px;
-}
-input:focus:-moz-placeholder-shown {
-  padding-bottom: 40px;
-}
-input:focus::-moz-placeholder-shown {
-  padding-bottom: 40px;
-}
-input:focus:-ms-input-placeholder-shown {
-  padding-bottom: 40px;
-}
-input:focus::placeholder-shown {
-  padding-bottom: 40px;
-}
-button[name="input-btn"] {
+.hidden {
   visibility: hidden;
+}
+input[type="date"]:hover::-webkit-calendar-picker-indicator {
+  color: red;
+}
+input[type="date"]:hover:after {
+  content: "";
+  color: #555;
+  padding-right: 5px;
 }

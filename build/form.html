@@ -10,35 +10,36 @@
     <title>Новый заказ</title>
 </head>
 <body>
-    <form class="add-task-form">
+    <form class="add-task-form" id="form">
         <h2 class="title-form">Новый заказ</h2>
         <div class="date-input-wrap">
-            <input type="date" name="date-implementation"placeholder="срок выполнения"value="30 сентября 2017">
-            <label for="date-implementation"></label>
+            <input class="date-input" id="date-implementation" type="date" placeholder="Срок выполнения" value="2017-09-21">
+            <label class="top-placeholder" for=>Срок выполнения</label>
         </div>
         <div class="input-wrap">
-            <input type="text" id="type-of-work" placeholder="Тип работы"/>
-            <label for="type-of-work"></label>
-            <button type="button" name="input-btn">Изменить</button>
+            <input class="input-field" type="text" id="type-of-work" placeholder="Тип работы"/>
+            <label class="top-placeholder" for="type-of-work">Тип работы</label>
+            <button type="button" id="button-work" class="input-btn hidden" >Изменить</button>
         </div>
         <div class="input-wrap">
-            <input type="text"id="something-type"placeholder="тип работы"/>
-            <label for="something-type"></label>
-            <button type="button" name="input-btn">изменить</button>
+            <input class="input-field" type="text" id="something-type"placeholder="Тип работы"/>
+            <label class="top-placeholder" for="something-type">Тип работы</label>
+            <button type="button" id="button-work2" class="input-btn hidden">Изменить</button>
         </div>
         <div class="input-wrap">
-            <input type="text"id="title-work" placeholder="заголовок" />
-            <label for="title-work"></label>
-            <button type="button" name="input-btn">изменить</button>
+            <input class="input-field" type="text" id="title-work" placeholder="Заголовок" />
+            <label class="top-placeholder" for="title-work">Заголовок</label>
+            <button type="button" id="button-work3" class="input-btn hidden">Изменить</button>
         </div>
         <div class="input-wrap">
-            <textarea rows="7" cols="67" id="capture-task">В данном случае можно согласиться с А.А. Земляковским и румынским исследователем Альбертом Ковачем, считающими, что диалогический контекст абсурдно осознаёт палимпсест. Комбинаторное приращение выбирает мелодический символ. Генеративная поэтика недоступно нивелирует не-текст, об этом свидетельствуют краткость и завершенность формы, бессюжетность, своеобразие тематического развертывания.</textarea>
-            <label for="capture-task">сообщите нам всё, что необходимо знать для успешного выполнения работы</label>
+            <textarea class="textarea-field" rows="7" cols="67" id="capture-task">В данном случае можно согласиться с А.А. Земляковским и румынским исследователем Альбертом Ковачем, считающими, что диалогический контекст абсурдно осознаёт палимпсест. Комбинаторное приращение выбирает мелодический символ. Генеративная поэтика недоступно нивелирует не-текст, об этом свидетельствуют краткость и завершенность формы, бессюжетность, своеобразие тематического развертывания.</textarea>
+            <label class="top-placeholder" for="capture-task">Задание</label>
+            <span class="capture-for-task">Сообщите нам всё, что необходимо знать для успешного выполнения работы</span>
         </div>
         <div class="input-wrap">
-            <input type="file"id="files-input"/>
-            <label for="files-input">файлы (при наличии)</label>
-            <button type="submit" name="add-files">Добавить файлы</button>
+            <input class="file-field" type="file"id="files-input"/>
+            <label class="top-placeholder" for="files-input">Файлы (при наличии)</label>
+            <button type="submit" class="for-files-input" name="add-files">Добавить файлы</button>
         </div>
         <div class="antiplagiarism">
             <p class="title-forms-div">антиплагиат</p>
@@ -72,5 +73,39 @@
         </div>
         <button type="submit">разместить заказ</button>
     </form>
+    <script>
+
+        const inputTypeOfWork = document.getElementById('type-of-work')
+        const inputSomethingType = document.getElementById('something-type')
+        const inputTitleWork = document.getElementById('title-work')
+        const btnForTypeOfWork = document.getElementById('button-work')
+        const btnForSomethingType = document.getElementById('button-work2')
+        const btnForTitleWork = document.getElementById('button-work3')
+        const form = document.getElementById('form')
+
+        form.addEventListener('keydown', () => {
+            if (inputTypeOfWork.value.length > 1) {
+                btnForTypeOfWork.classList.remove('hidden')
+                btnForTypeOfWork.classList.add('visible')
+            } else {
+                btnForTypeOfWork.classList.remove('visible')
+                btnForTypeOfWork.classList.add('hidden')
+            }
+            if (inputSomethingType.value.length > 1) {
+                btnForSomethingType.classList.remove('hidden')
+                btnForSomethingType.classList.add('visible')
+            } else {
+                btnForSomethingType.classList.remove('visible')
+                btnForSomethingType.classList.add('hidden')
+            }
+            if (inputTitleWork.value.length > 1) {
+                btnForTitleWork.classList.remove('hidden')
+                btnForTitleWork.classList.add('visible')
+            } else {
+                btnForTitleWork.classList.remove('visible')
+                btnForTitleWork.classList.add('hidden')
+            }
+        })
+    </script>
 </body>
 </html>
