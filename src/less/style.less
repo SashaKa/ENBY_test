@@ -71,21 +71,26 @@ body {
 
 }
 .input-wrap {
-    border: 1px solid rgba(51, 51, 51, 0.13);
+    display: flex;
+    border: 2px solid rgba(51, 51, 51, 0.13);
     border-radius: 5px;
     position: relative;
     font-size: 18px;
     line-height: 1.11;
 }
+.files-input {
+    flex-direction: column;
+}
 input,
 textarea {
     width: 100%;
     border: none;
-    padding:25px 20px 0px 20px;
+    padding:25px 20px 20px 20px;
 }
 input[type="date"] {
     width: 250px;
 }
+
 input:focus,
 textarea:focus {
     outline: none;
@@ -171,3 +176,23 @@ input[type="date"]:hover:after {
   color: #555;
   padding-right: 5px;
 }
+.input-btn {
+    align-self: center;
+    background-color: #ffffff;
+    border: 2px solid #ffd012;
+    border-radius: 100px;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 1.43;
+    letter-spacing: 0.5px;
+    color: #333333;
+    padding: 10px 20px;
+}
+.input-btn:hover {
+    background-color: #ffd012;
+}
+.antiplagiarism label,
+.doer-area label {
+    font-size: 18px;
+    line-height: 1.33;
+ }

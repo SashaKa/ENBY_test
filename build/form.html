@@ -17,29 +17,29 @@
             <label class="top-placeholder" for=>Срок выполнения</label>
         </div>
         <div class="input-wrap">
-            <input class="input-field" type="text" id="type-of-work" placeholder="Тип работы"/>
-            <label class="top-placeholder" for="type-of-work">Тип работы</label>
+            <input class="input-field" type="text" id="input-work" placeholder="Тип работы"/>
+            <label class="top-placeholder" for="input-work">Тип работы</label>
             <button type="button" id="button-work" class="input-btn hidden" >Изменить</button>
         </div>
         <div class="input-wrap">
-            <input class="input-field" type="text" id="something-type"placeholder="Тип работы"/>
-            <label class="top-placeholder" for="something-type">Тип работы</label>
-            <button type="button" id="button-work2" class="input-btn hidden">Изменить</button>
+            <input class="input-field" type="text" id="input-type"placeholder="Тип работы"/>
+            <label class="top-placeholder" for="input-type">Тип работы</label>
+            <button type="button" id="button-type" class="input-btn hidden">Изменить</button>
         </div>
         <div class="input-wrap">
-            <input class="input-field" type="text" id="title-work" placeholder="Заголовок" />
-            <label class="top-placeholder" for="title-work">Заголовок</label>
-            <button type="button" id="button-work3" class="input-btn hidden">Изменить</button>
+            <input class="input-field" type="text" id="input-title" placeholder="Заголовок" />
+            <label class="top-placeholder" for="input-title">Заголовок</label>
+            <button type="button" id="button-title" class="input-btn hidden">Изменить</button>
         </div>
         <div class="input-wrap">
-            <textarea class="textarea-field" rows="7" cols="67" id="capture-task">В данном случае можно согласиться с А.А. Земляковским и румынским исследователем Альбертом Ковачем, считающими, что диалогический контекст абсурдно осознаёт палимпсест. Комбинаторное приращение выбирает мелодический символ. Генеративная поэтика недоступно нивелирует не-текст, об этом свидетельствуют краткость и завершенность формы, бессюжетность, своеобразие тематического развертывания.</textarea>
+            <textarea class="input-field" rows="10" cols="67" id="capture-task">В данном случае можно согласиться с А.А. Земляковским и румынским исследователем Альбертом Ковачем, считающими, что диалогический контекст абсурдно осознаёт палимпсест. Комбинаторное приращение выбирает мелодический символ. Генеративная поэтика недоступно нивелирует не-текст, об этом свидетельствуют краткость и завершенность формы, бессюжетность, своеобразие тематического развертывания.</textarea>
             <label class="top-placeholder" for="capture-task">Задание</label>
             <span class="capture-for-task">Сообщите нам всё, что необходимо знать для успешного выполнения работы</span>
         </div>
-        <div class="input-wrap">
-            <input class="file-field" type="file"id="files-input"/>
-            <label class="top-placeholder" for="files-input">Файлы (при наличии)</label>
-            <button type="submit" class="for-files-input" name="add-files">Добавить файлы</button>
+        <div class="input-wrap files-input">
+            <label class="btn-upload" for="upload-files"></label>
+            <input class="file-field" onchange='onFilesSelected(event)' type="file" id="upload-files" multiple/>
+            <input type="submit" id="button-upload" class="input-btn" value="Добавить файлы"/>
         </div>
         <div class="antiplagiarism">
             <p class="title-forms-div">антиплагиат</p>
@@ -75,12 +75,18 @@
     </form>
     <script>
 
-        const inputTypeOfWork = document.getElementById('type-of-work')
-        const inputSomethingType = document.getElementById('something-type')
-        const inputTitleWork = document.getElementById('title-work')
+        var onFilesSelected = function(event) {
+            var input = event.target;
+            console.log(input.files.length)
+        };
+
+
+        const inputTypeOfWork = document.getElementById('input-work')
+        const inputSomethingType = document.getElementById('input-type')
+        const inputTitleWork = document.getElementById('input-title')
         const btnForTypeOfWork = document.getElementById('button-work')
-        const btnForSomethingType = document.getElementById('button-work2')
-        const btnForTitleWork = document.getElementById('button-work3')
+        const btnForSomethingType = document.getElementById('button-type')
+        const btnForTitleWork = document.getElementById('button-title')
         const form = document.getElementById('form')
 
         form.addEventListener('keydown', () => {
