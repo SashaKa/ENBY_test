@@ -1,3 +1,5 @@
+// ------less mixins
+
 @small:10px;
 @midi:14px;
 @large:18px;
@@ -11,6 +13,7 @@
     font-size: 10px;
     line-height: 10px;
     color: #333333;
+    text-transform: uppercase;
 }
 .placeholder {
     opacity: 0.6;
@@ -29,9 +32,10 @@ body {
     font-size: @small;
     background-color:  #dcdfe4;
 }
+// --------wrapper forms styles
 .add-task-form{
     display: flex;
-    flex-direction: column;
+    flex-flow: column wrap;
     width: 840px;
     height: 100%;
     margin: 120px auto;
@@ -57,20 +61,30 @@ body {
 .add-task-form::after {
     bottom: 106px;
 }
+.left-col {
+    width: 70%;
+    position: relative;
+}
+.right-col {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 24%;
+    width: 30%;
+    position: absolute;
+    top: 143px;
+    right: 72px;
+}
 .title-form {
     font-size: @xxlarge;
     font-weight: 900;
     line-height: 40px;
 }
-.input-wrap {
+// -------inputs and placeholder
+.input-wrap,
+.date-input-wrap {
     margin: 10px 0;
     width: 450px;
-}
-.date-input-wrap {
-    align-self: flex-end;
-
-}
-.input-wrap {
     display: flex;
     border: 2px solid rgba(51, 51, 51, 0.13);
     border-radius: 5px;
@@ -78,6 +92,10 @@ body {
     font-size: 18px;
     line-height: 1.11;
 }
+.input-wrap:first-of-type {
+    margin-top: 45px;
+}
+
 .files-input {
     flex-direction: column;
 }
@@ -85,12 +103,8 @@ input,
 textarea {
     width: 100%;
     border: none;
-    padding:25px 20px 20px 20px;
+    padding:20px 20px 20px 20px;
 }
-input[type="date"] {
-    width: 250px;
-}
-
 input:focus,
 textarea:focus {
     outline: none;
@@ -133,50 +147,37 @@ input:focus:-ms-input-placeholder{
     transition: opacity 0.3s ease;
 }
 
-textarea {
-    font-size: 10px;
-    line-height: 1;
-    position: relative;
+#capture-task {
+    font-size: 14px;
+    line-height: 1.43;
 }
 .top-placeholder {
     position: absolute;
     .placeholder-top;
     opacity: 0;
-    top: 14px;
+    top: 10px;
     left: 20px;
 }
 .input-field:focus + label{
     opacity: 0.6;
 }
-.capture-for-task {
-    position: absolute;
-    opacity: 0.8;
-    font-size: 14px;
-    line-height: 1.57;
-    color: #4e4e4e;
-    left: 105%;
-    top: 20%;
-}
+
+// --------buttons
 .visible {
     visibility: visible;
 }
-.input-btn {
-    background-color: pink;
-}
+
 .hidden {
     visibility: hidden;
 }
 
-input[type="date"]:hover::-webkit-calendar-picker-indicator {
-
-  color: red;
-}
 input[type="date"]:hover:after {
   content: "";
   color: #555;
   padding-right: 5px;
 }
-.input-btn {
+
+.user-btn {
     align-self: center;
     background-color: #ffffff;
     border: 2px solid #ffd012;
@@ -187,12 +188,258 @@ input[type="date"]:hover:after {
     letter-spacing: 0.5px;
     color: #333333;
     padding: 10px 20px;
+    margin-right: 10px;
+    text-transform: uppercase;
 }
-.input-btn:hover {
+.user-btn:hover {
     background-color: #ffd012;
+}
+
+// ---------input files upload
+.file-input {
+    display: flex;
+    flex-direction: column;
+    padding: 13px 25px 20px 20px;
+}
+.file-field {
+    .placeholder-top;
+}
+.file-input .input-btn {
+    align-self: flex-start;
+    position:relative;
+    margin-top: 21px;
+}
+.file-input::before {
+    position: absolute;
+    content:"";
+    width: 100%;
+    height: 1px;
+    opacity: 0.5;
+    background-color: #241828;
+    left: 0;
+    bottom: 75px;
+}
+
+.file-name {
+    font-size: 14px;
+    line-height: 1.71;
+    position: relative;
+    padding-left: 20px;
+}
+.file-name::before {
+    position:absolute;
+    content: "";
+    width: 18px;
+    height: 24px;
+    background: url(../img/file.png) no-repeat center;
+    left: -5px;
+}
+
+ .file-name::after {
+    position:absolute;
+    content: "";
+    width: 100%;
+    height: 1px;
+    opacity: 0.2;
+    background-color: #241828;
+    bottom: -13px;
+    left: -5px;
+}
+.file-name:last-of-type::after {
+  height: 0;
+}
+
+.close-btn {
+    width: 24px;
+    height: 24px;
+    font-size: 0;
+    border: 0;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    right: 14px;
+}
+.close-btn::before,
+.close-btn::after {
+    content: "";
+    position: absolute;
+    width: 24px;
+    height: 2px;
+    background-color:  #d0011b;
+    top: 8px;
+    left: 0;
+
+}
+.close-btn::before {
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+.close-btn::after {
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+.upload-files,
+.form-submit {
+    align-self: flex-start;
+}
+.upload-files {
+    margin-top: 10px;
+}
+// -------------Radio buttons
+.antiplagiarism ,
+.doer-area {
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 18px;
+    line-height: 1.33;
+    color: #333333;
+    line-height: 1.33;
+}
+.title-forms-div {
+    .placeholder-top;
+    width: 100%;
+    padding: 5px 0;
+    padding-top: 20px;
+    text-transform: uppercase;
+}
+
+input[type="radio"] {
+    vertical-align: top;
+    width: 36px;
+    height: 36px;
+    position: relative;
+    padding-left: 40px;
+}
+input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+}
+input[type="radio"] + label {
+  position: relative;
+  padding-top: 10px;
+}
+input[type="radio"] + label:before {
+    content: '';
+    position: absolute;
+    width: 36px;
+    height: 36px;
+    border:1px solid #999999;
+    border-radius: 50%;
+    left: 0px;
+    bottom: -5px;
+}
+input[type="radio"] + label:after {
+    content: '';
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    background-color: #ffd012;
+    border-radius: 50%;
+    left: 6px;
+    bottom: 1px;
+    opacity: 0;
+    transition: all .2s;
+}
+input[type="radio"]:checked + label:after {
+  opacity: 1;
 }
 .antiplagiarism label,
 .doer-area label {
+    padding-left: 40px;
+}
+.antiplagiarism label {
+    padding-right: 13%;
+    
+}
+.doer-area label {
+    padding-right: 1%;
+}
+// --------profile card
+.doer-profile {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width:84%;
+}
+.doers-id {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    margin-left: -84px;
+        span {
+            text-transform: uppercase;
+            opacity: 0.6;
+            font-size: 10px;
+            line-height: 1;
+            color: #4e4e4e;
+        }
+        .doers-name {
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            line-height: 1.11;
+            color: #333333;
+        }
+        .id-number {
+            opacity: 0.8;
+            font-family: Roboto;
+            font-size: 10px;
+            line-height: 1;
+            color: #4e4e4e;
+            margin-top: 5px;
+    }
+}
+.doer-avatar {
+    border-radius: 50%;
+    margin-bottom: 50px;
+}
+.rating-reviewrap {
+    font-size: 12px;
+    line-height: 1.67;
+    color: #999999;
+    text-decoration: none;
+        .positive-review{
+            color: #4ebd17;
+            margin-right: 10px;
+        }
+        .negative-review {
+            color: #d0021b;
+        }
+}
+// --------input date-choice
+.date-input-wrap {
+    width: 250px;
+    position:relative;
+}
+#date-implementation {
     font-size: 18px;
-    line-height: 1.33;
- }
+    line-height: 1.11;
+    
+}
+.img-calendar {
+    position: absolute;
+    width: 28px;
+    height: 26px;
+    background: url(../img/btn-calendar.png) no-repeat center;
+    top: 17px;
+    right: 15px;
+    cursor: pointer;
+}
+.img-calendar::before {
+    position: absolute;
+    content:"";
+    width: 1px;
+    opacity: 0.5;
+    background-color: #241828;
+    height: 100%;
+    left: -15px;
+}
+
+// --------right-column
+.capture-for-task {
+    opacity: 0.8;
+    font-size: 14px;
+    line-height: 1.57;
+    color: #4e4e4e;
+    width: 250px;
+}
