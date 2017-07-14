@@ -25,5 +25,8 @@
     "gulp-load-plugins": "^1.5.0",
     "gulp-plumber": "^1.1.0",
     "gulp-util": "^3.0.8"
+  },
+  "dependencies": {
+    "air-datepicker": "^2.2.3"
   }
 }

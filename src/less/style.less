@@ -1,5 +1,13 @@
 // ------less mixins
 
+// mixin for media query
+.screen(@min, @max, @ruleset) {
+  @media (min-width: @min) and (max-width: (@max - 1)) {
+    @ruleset();
+  }
+}
+
+
 @small:10px;
 @midi:14px;
 @large:18px;
@@ -74,6 +82,10 @@ body {
     position: absolute;
     top: 143px;
     right: 72px;
+
+    
+
+
 }
 .title-form {
     font-size: @xxlarge;
@@ -326,7 +338,7 @@ input[type="radio"] + label:before {
     border:1px solid #999999;
     border-radius: 50%;
     left: 0px;
-    bottom: -5px;
+    bottom: -8px;
 }
 input[type="radio"] + label:after {
     content: '';
@@ -336,7 +348,7 @@ input[type="radio"] + label:after {
     background-color: #ffd012;
     border-radius: 50%;
     left: 6px;
-    bottom: 1px;
+    bottom: -2px;
     opacity: 0;
     transition: all .2s;
 }
