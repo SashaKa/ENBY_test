@@ -388,7 +388,7 @@ input[type="radio"] + label:before {
   border: 1px solid #999999;
   border-radius: 50%;
   left: 0px;
-  bottom: -8px;
+  bottom: -10px;
 }
 input[type="radio"] + label:after {
   content: '';
@@ -398,7 +398,7 @@ input[type="radio"] + label:after {
   background-color: #ffd012;
   border-radius: 50%;
   left: 6px;
-  bottom: -2px;
+  bottom: -4px;
   opacity: 0;
   -moz-transition: all .2s;
   transition: all .2s;
